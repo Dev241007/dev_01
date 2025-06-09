@@ -1,4 +1,8 @@
+import 'package:dev_01/Home.dart';
+import 'package:dev_01/houses.dart';
 import 'package:flutter/material.dart';
+
+import 'colors.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -8,79 +12,37 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
-  final List<String> titles = [
-    "Image-1",
-    "Image-2",
-    "Image-3",
-    "Image-4",
-    "Image-5"
-  ];
-
-  final List<String> images = [
-    'assets/images/house-stark.jpg',
-    'assets/images/house-stark.jpg',
-    'assets/images/house-stark.jpg',
-    'assets/images/house-stark.jpg',
-    'assets/images/house-stark.jpg',
-  ];
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title:Text("HomeScreen"),centerTitle: true,
-        leading: IconButton(onPressed: (){
-          Navigator.pop(context);
-        }, icon: Icon(Icons.arrow_back)),
-      ),
-      body: ListView.builder(
-        itemCount: titles.length,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Stack(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(15),
-                  child: Image.asset(
-                    images[index],
-                    width: double.infinity,
-                    height: 170,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                Container(
-                  height: 170,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Colors.black.withOpacity(0.3),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      titles[index],
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontFamily: 'GameOfThrones', // optional
-                        shadows: [
-                          Shadow(
-                            blurRadius: 8,
-                            color: Colors.black,
-                            offset: Offset(2, 2),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          );
-        },
+    return DefaultTabController(
+      length: 2, // Number of tabs
+      child: Scaffold(
+        backgroundColor: AppColors.deep_black,
+        appBar: AppBar(
+          leading: IconButton(onPressed: (){
+            Navigator.pop(context);
+          }, icon: Icon(Icons.arrow_back,color: AppColors.royal_gold,)),
+          backgroundColor: Colors.transparent,
+          title: const Text("Game of Thrones",style: TextStyle(color: AppColors.royal_gold),),
+          centerTitle: true,
+          bottom: const TabBar(
+            dividerColor: Colors.transparent,
+            unselectedLabelColor: AppColors.textSecondary,
+            labelColor: AppColors.royal_gold,
+            indicatorColor: AppColors.textSecondary,
+            tabs: [
+              Tab(text: "Houses",icon: Icon(Icons.home,color: AppColors.royal_gold,)),
+              Tab(text:'Dragons',icon: Icon(Icons.local_fire_department,color: AppColors.royal_gold,)),
+            ],
+          ),
+        ),
+        body: const TabBarView(
+          children: [
+            // 1st Tab
+           Houses(),
+          // 2nd Tab
+            Dragons()          ],
+        ),
       ),
     );
   }
