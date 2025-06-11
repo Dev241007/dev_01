@@ -1,5 +1,7 @@
+import 'package:dev_01/Calculator.dart';
 import 'package:dev_01/ForgetPassword.dart';
 import 'package:dev_01/HomeScreen.dart';
+import 'package:dev_01/InstagramClone.dart';
 import 'package:dev_01/SignUp.dart';
 import 'package:dev_01/SplashScreen.dart';
 import 'package:dev_01/login.dart';
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Splashscreen()
+      home: instagram()
     );
   }
 }
