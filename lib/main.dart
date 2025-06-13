@@ -1,3 +1,4 @@
+import 'package:dev_01/Bnavigation.dart';
 import 'package:dev_01/Calculator.dart';
 import 'package:dev_01/ForgetPassword.dart';
 import 'package:dev_01/HomeScreen.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: instagram()
+      home: Bnavigation()
     );
   }
 }
