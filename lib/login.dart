@@ -2,6 +2,8 @@ import 'package:dev_01/ForgetPassword.dart';
 import 'package:dev_01/HomeScreen.dart';
 import 'package:dev_01/SignUp.dart';
 import 'package:dev_01/SplashScreen.dart';
+import 'package:dev_01/pr/maintab.dart';
+import 'package:dev_01/project/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 class login extends StatefulWidget {
@@ -87,7 +89,8 @@ class _loginState extends State<login> {
                 height: 40,
                 child: MaterialButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => Homescreen()));
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Login Success")));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => MainTabs()));
                   },
                   color: Colors.black,
                   textColor: Colors.white,

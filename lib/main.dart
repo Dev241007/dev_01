@@ -6,6 +6,8 @@ import 'package:dev_01/InstagramClone.dart';
 import 'package:dev_01/SignUp.dart';
 import 'package:dev_01/SplashScreen.dart';
 import 'package:dev_01/login.dart';
+import 'package:dev_01/project/home.dart';
+import 'package:dev_01/project/homescreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Bnavigation()
+      home: home()
     );
   }
 }

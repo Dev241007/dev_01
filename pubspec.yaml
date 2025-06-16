@@ -64,6 +64,7 @@ flutter:
   assets:
      - assets/images/house-stark.jpg
      - assets/images/
+     - assets/images/greek-salad.png
      - assets/animations/animation-1.json
      - assets/animations/
 

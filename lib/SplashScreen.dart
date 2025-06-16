@@ -16,7 +16,7 @@ class _SplashscreenState extends State<Splashscreen> {
   void initState(){
     super.initState();
     Timer(Duration(seconds: 5),(){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>siUp()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>login()));
     });
   }
   Widget build(BuildContext context) {
